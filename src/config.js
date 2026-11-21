@@ -11,7 +11,7 @@ export const CONTACT = {
 export const SOCIALS = {
   linkedin: 'https://www.linkedin.com/in/arthurbisposalesforce/',
   github: 'https://github.com/arthurbispoaju-dotcom',
-  instagram: '', // ex.: 'https://instagram.com/ajudigital'
+  instagram: 'https://www.instagram.com/ajudigital__/',
 }
 
 // Recebimento do formulário de contato.
