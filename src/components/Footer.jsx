@@ -4,14 +4,15 @@ import { IconGitHub, IconInstagram, IconLinkedIn, IconMail, IconWhatsApp } from 
 import { Container } from './ui'
 import { filterPortfolio } from './Solutions'
 
-const SERVICES = [
-  { label: 'Criação de sites', filter: 'sites' },
+const SERVICE_LINKS = [
+  { label: 'Criação de sites', href: '/criacao-de-sites-aracaju/' },
+  { label: 'Dashboards', href: '/dashboards-para-empresas/' },
+  { label: 'Automação de processos', href: '/automacao-de-processos/' },
   { label: 'Desenvolvimento de software', filter: 'software' },
-  { label: 'Automações', filter: 'automacoes' },
   { label: 'Apresentações profissionais', filter: 'apresentacoes' },
 ]
 
-export default function Footer() {
+export default function Footer({ base = '' }) {
   const socials = [
     ['WhatsApp', whatsappLink(), IconWhatsApp],
     ['E-mail', `mailto:${CONTACT.email}`, IconMail],
@@ -40,7 +41,7 @@ export default function Footer() {
           <h2 className="font-display text-sm font-semibold text-white">Links</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {NAV.map((n) => (
-              <li key={n.href}><a href={n.href} className="text-muted transition hover:text-orange-glow">{n.label}</a></li>
+              <li key={n.href}><a href={base + n.href} className="text-muted transition hover:text-orange-glow">{n.label}</a></li>
             ))}
           </ul>
         </nav>
@@ -48,8 +49,14 @@ export default function Footer() {
         <div>
           <h2 className="font-display text-sm font-semibold text-white">Serviços</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {SERVICES.map((s) => (
-              <li key={s.label}><a href="#projetos" onClick={() => filterPortfolio(s.filter)} className="text-muted transition hover:text-orange-glow">{s.label}</a></li>
+            {SERVICE_LINKS.map((s) => (
+              <li key={s.label}>
+                {s.href ? (
+                  <a href={s.href} className="text-muted transition hover:text-orange-glow">{s.label}</a>
+                ) : (
+                  <a href={base + '#projetos'} onClick={base ? undefined : () => filterPortfolio(s.filter)} className="text-muted transition hover:text-orange-glow">{s.label}</a>
+                )}
+              </li>
             ))}
           </ul>
         </div>

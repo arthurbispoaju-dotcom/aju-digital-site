@@ -27,8 +27,9 @@ function validate(v) {
 const summary = (v) =>
   `Olá, AJU Digital! Vim pelo site.\n\n*Nome:* ${v.nome}${v.empresa ? `\n*Empresa:* ${v.empresa}` : ''}\n*E-mail:* ${v.email}\n*WhatsApp:* ${v.whatsapp}\n*Serviço:* ${v.servico}\n\n*Projeto:* ${v.descricao}`
 
-export default function Contact() {
-  const [values, setValues] = useState(EMPTY)
+export default function Contact({ defaultService = '' }) {
+  const initial = { ...EMPTY, servico: defaultService }
+  const [values, setValues] = useState(initial)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | success | error
 
@@ -68,7 +69,7 @@ export default function Contact() {
       const data = await res.json().catch(() => ({}))
       if (!res.ok || data.success === 'false' || data.success === false) throw new Error(data.message || 'Falha no envio')
       setStatus('success')
-      setValues(EMPTY)
+      setValues(initial)
     } catch {
       setStatus('error')
     }
@@ -161,7 +162,7 @@ export default function Contact() {
                     {SERVICE_OPTIONS.map((opt) => {
                       const on = values.servico === opt
                       return (
-                        <label key={opt} className={`flex cursor-pointer items-center gap-2.5 rounded-xl last:col-span-2 border px-3.5 py-3 text-sm transition-all ${on ? 'border-orange/70 bg-orange/10 text-white' : 'border-white/10 text-white/65 hover:border-white/25'}`}>
+                        <label key={opt} className={`flex cursor-pointer items-center gap-2.5 rounded-xl border px-3.5 py-3 text-sm transition-all ${on ? 'border-orange/70 bg-orange/10 text-white' : 'border-white/10 text-white/65 hover:border-white/25'}`}>
                           <input type="radio" name="servico" value={opt} checked={on} onChange={set('servico')} className="peer sr-only" />
                           <span className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border peer-focus-visible:ring-2 peer-focus-visible:ring-orange ${on ? 'border-orange bg-orange' : 'border-white/30'}`}>
                             {on && <span className="h-1.5 w-1.5 rounded-full bg-black" />}

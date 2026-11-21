@@ -3,10 +3,10 @@ import Logo from './Logo'
 import { NAV } from '../config'
 import { IconClose, IconMenu } from './icons'
 
-export default function Navbar() {
+export default function Navbar({ base = '', ctaHref = '#contato' }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('#inicio')
+  const [active, setActive] = useState(base ? '' : '#inicio')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -17,7 +17,7 @@ export default function Navbar() {
 
   // Destaca o item do menu da seção visível
   useEffect(() => {
-    const sections = NAV.map((n) => document.querySelector(n.href)).filter(Boolean)
+    const sections = base ? [] : NAV.map((n) => document.querySelector(n.href)).filter(Boolean)
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(`#${e.target.id}`)),
       { rootMargin: '-45% 0px -50% 0px' },
@@ -41,7 +41,7 @@ export default function Navbar() {
           scrolled || open ? 'glass shadow-[0_20px_60px_-20px_rgba(0,0,0,.8)]' : 'border border-transparent'
         }`}
       >
-        <a href="#inicio" className="flex shrink-0 items-center" aria-label="AJU Digital, ir para o início">
+        <a href={base ? '/' : '#inicio'} className="flex shrink-0 items-center" aria-label="AJU Digital, ir para o início">
           <Logo />
         </a>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
           {NAV.map((item) => (
             <li key={item.href}>
               <a
-                href={item.href}
+                href={base + item.href}
                 aria-current={active === item.href ? 'true' : undefined}
                 className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
                   active === item.href ? 'text-white' : 'text-white/60 hover:text-white'
@@ -67,7 +67,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a href="#contato" className="btn btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
+          <a href={ctaHref} className="btn btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
             Solicitar orçamento
           </a>
           <button
@@ -95,7 +95,7 @@ export default function Navbar() {
           {NAV.map((item, i) => (
             <li key={item.href}>
               <a
-                href={item.href}
+                href={base + item.href}
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between rounded-2xl px-4 py-4 font-display text-lg text-white/85 hover:bg-white/5"
               >
@@ -105,7 +105,7 @@ export default function Navbar() {
             </li>
           ))}
           <li className="p-2 pt-3">
-            <a href="#contato" onClick={() => setOpen(false)} className="btn btn-primary w-full">
+            <a href={ctaHref} onClick={() => setOpen(false)} className="btn btn-primary w-full">
               Solicitar orçamento
             </a>
           </li>

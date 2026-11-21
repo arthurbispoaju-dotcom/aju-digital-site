@@ -12,6 +12,8 @@ export const SOLUTIONS = [
     services: ['Sites institucionais', 'Landing pages', 'Sites profissionais', 'Páginas de vendas', 'Redesign de sites'],
     cta: 'Conheça nossos projetos',
     filter: 'sites',
+    page: '/criacao-de-sites-aracaju/',
+    pageLabel: 'Criação de sites em Aracaju',
   },
   {
     id: 'software',
@@ -30,6 +32,8 @@ export const SOLUTIONS = [
     ],
     cta: 'Veja um sistema em ação',
     filter: 'software',
+    page: '/dashboards-para-empresas/',
+    pageLabel: 'Dashboards para empresas',
   },
   {
     id: 'automacoes',
@@ -48,6 +52,8 @@ export const SOLUTIONS = [
     ],
     cta: 'Descubra as possibilidades',
     filter: 'automacoes',
+    page: '/automacao-de-processos/',
+    pageLabel: 'Automação de processos',
   },
   {
     id: 'apresentacoes',
@@ -76,4 +82,4 @@ export const PROCESS = [
   { n: '04', title: 'Entrega', text: 'Apresentamos o resultado e orientamos sobre sua utilização.' },
 ]
 
-export const SERVICE_OPTIONS = ['Criação de sites', 'Desenvolvimento de software', 'Automações', 'Apresentações profissionais', 'Outros projetos']
+export const SERVICE_OPTIONS = ['Criação de sites', 'Dashboards', 'Desenvolvimento de software', 'Automações', 'Apresentações profissionais', 'Outros projetos']

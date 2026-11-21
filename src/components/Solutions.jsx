@@ -44,6 +44,11 @@ export default function Solutions() {
                   ))}
                 </ul>
 
+                {s.page && (
+                  <a href={s.page} className="mt-7 inline-flex w-fit items-center gap-1.5 text-sm text-orange-glow underline decoration-orange/40 underline-offset-4 transition hover:decoration-orange">
+                    Saiba mais: {s.pageLabel} <IconArrow className="h-3.5 w-3.5" />
+                  </a>
+                )}
                 <a
                   href="#projetos"
                   onClick={() => filterPortfolio(s.filter)}
