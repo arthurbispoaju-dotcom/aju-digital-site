@@ -125,8 +125,9 @@
     -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000, transparent 80%);
   }
 
-  .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1), filter .9s; }
-  .reveal.is-visible { opacity: 1; transform: none; filter: none; }
+  /* Só esconde para animar quando o JavaScript está ativo: sem JS, o conteúdo aparece normalmente. */
+  .js .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1), filter .9s; }
+  .js .reveal.is-visible { opacity: 1; transform: none; filter: none; }
 
   .field {
     @apply w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-white/30 transition;
@@ -146,5 +147,5 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-  .reveal { opacity: 1; transform: none; filter: none; }
+  .js .reveal { opacity: 1; transform: none; filter: none; }
 }

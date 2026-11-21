@@ -21,13 +21,13 @@ export default function Hero() {
 
       <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
         <div className="relative z-10 text-center lg:text-left">
-          <p className="eyebrow max-sm:tracking-[0.18em] max-sm:before:hidden animate-[fade-up_1s_ease-out_both]">Tecnologia · Automação · Criatividade</p>
-          <h1 id="hero-title" className="mt-6 text-[2.6rem] font-semibold leading-[1.02] sm:text-6xl lg:text-[3.9rem] xl:text-[4.5rem]">
-            <span className="block text-fade">Transformamos ideias em</span>
-            <span className="text-gradient-anim">experiências digitais.</span>
+          <p className="eyebrow max-sm:tracking-[0.18em] max-sm:before:hidden animate-[fade-up_1s_ease-out_both]">Aracaju (SE) · Atendimento em todo o Brasil</p>
+          <h1 id="hero-title" className="mt-6 text-[2.35rem] font-semibold leading-[1.04] sm:text-[3.4rem] lg:text-[3.5rem] xl:text-[4rem]">
+            <span className="block text-fade">Sites, dashboards e automações</span>
+            <span className="text-gradient-anim">para sua empresa crescer.</span>
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg lg:mx-0">
-            Desenvolvemos sites profissionais, softwares sob medida, automações inteligentes e apresentações estratégicas para empresas que desejam crescer, inovar e se destacar.
+            A AJU Digital cria sites profissionais, painéis de indicadores e automações com IA para empresas de Aracaju e de todo o Brasil. Também desenvolvemos sistemas sob medida e apresentações estratégicas.
           </p>
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a href="#solucoes" className="btn btn-primary group w-full sm:w-auto">
@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
 
           <ul className="mt-12 hidden flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/45 sm:flex sm:justify-center lg:justify-start">
-            {['Sites', 'Software sob medida', 'Automações com IA', 'Apresentações'].map((t) => (
+            {['Criação de sites', 'Dashboards', 'Automações com IA', 'Software sob medida', 'Apresentações'].map((t) => (
               <li key={t} className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-sm bg-orange" />
                 {t}
@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
       </Container>
 
-      <a href="#solucoes" aria-label="Rolar para as soluções" className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/35 transition hover:text-white/70 lg:flex">
+      <a href="#solucoes" aria-label="Rolar para as soluções" className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/55 transition hover:text-white/70 lg:flex">
         Role
         <span className="relative h-10 w-px overflow-hidden bg-white/10">
           <span className="absolute inset-x-0 top-0 h-4 animate-[scroll-line_2s_ease-in-out_infinite] bg-orange-glow" />

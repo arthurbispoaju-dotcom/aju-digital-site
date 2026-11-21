@@ -140,7 +140,7 @@ export default function ServicePage({ service: s, others }) {
                     <span className={`w-fit rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${p.status === 'real' ? 'border-orange/50 text-orange-glow' : 'border-white/15 text-white/60'}`}>
                       {p.status === 'real' ? 'Projeto entregue' : 'Projeto conceitual'}
                     </span>
-                    <p className="mt-5 text-xs text-white/40">{p.client}</p>
+                    <p className="mt-5 text-xs text-white/55">{p.client}</p>
                     <h3 className="mt-1.5 text-lg font-semibold text-white">{p.title}</h3>
                     <p className="mt-2.5 text-sm leading-relaxed text-muted">{p.description}</p>
                     {p.link && (

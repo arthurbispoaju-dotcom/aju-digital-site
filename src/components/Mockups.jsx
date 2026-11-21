@@ -8,7 +8,7 @@ export function Laptop({ children, url }) {
           {url && (
             <div className="absolute inset-x-0 top-0 z-10 flex items-center gap-1.5 bg-[#0e0e0e]/95 px-2 py-1">
               {[0, 1, 2].map((i) => <span key={i} className="h-1.5 w-1.5 rounded-full bg-white/20" />)}
-              <span className="ml-1.5 truncate rounded-full bg-white/5 px-2 text-[9px] text-white/45">{url}</span>
+              <span className="ml-1.5 truncate rounded-full bg-white/5 px-2 text-[9px] text-white/65">{url}</span>
             </div>
           )}
           <div className={`absolute inset-0 ${url ? 'top-[14px]' : ''}`}>{children}</div>
@@ -54,7 +54,7 @@ export function Dashboard({ children, title = 'Fluxo de integração' }) {
     <div className="mx-auto w-[90%] overflow-hidden rounded-xl border border-white/15 bg-[#0e0e0e] shadow-[0_30px_60px_-25px_rgba(0,0,0,.9)]">
       <div className="flex items-center gap-1.5 border-b border-white/5 px-3 py-2">
         {[0, 1, 2].map((i) => <span key={i} className="h-1.5 w-1.5 rounded-full bg-white/20" />)}
-        <span className="ml-2 text-[9px] text-white/40">{title}</span>
+        <span className="ml-2 text-[9px] text-white/65">{title}</span>
       </div>
       <div className="relative aspect-[16/9]">{children}</div>
     </div>

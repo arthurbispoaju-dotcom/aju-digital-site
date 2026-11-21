@@ -39,7 +39,7 @@ export default function CallToAction() {
                 <IconWhatsApp className="h-5 w-5" />
                 Vamos conversar?
               </a>
-              <p className="mt-4 text-xs text-white/40">Atendimento direto pelo WhatsApp comercial</p>
+              <p className="mt-4 text-xs text-white/55">Atendimento direto pelo WhatsApp comercial</p>
             </div>
           </div>
         </Reveal>

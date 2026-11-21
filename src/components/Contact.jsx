@@ -111,7 +111,7 @@ export default function Contact({ defaultService = '' }) {
           </Reveal>
 
           <Reveal delay={180} className="mt-8 flex items-center gap-3">
-            <span className="text-xs uppercase tracking-[0.2em] text-white/40">Redes</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-white/55">Redes</span>
             {[
               ['LinkedIn', SOCIALS.linkedin, IconLinkedIn],
               ['GitHub', SOCIALS.github, IconGitHub],
@@ -217,7 +217,7 @@ export default function Contact({ defaultService = '' }) {
                     </p>
                   )}
                 </div>
-                <p className="mt-1 text-xs text-white/35">Seus dados são usados apenas para responder ao seu contato.</p>
+                <p className="mt-1 text-xs text-white/55">Seus dados são usados apenas para responder ao seu contato.</p>
               </>
             )}
           </form>

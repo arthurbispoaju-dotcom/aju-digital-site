@@ -89,7 +89,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="text-xs text-white/40">{p.client}</p>
+                  <p className="text-xs text-white/55">{p.client}</p>
                   <h3 className="mt-1.5 text-lg font-semibold leading-snug text-white">{p.title}</h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-muted">{p.description}</p>
                   <div className="mt-4 flex flex-wrap gap-1.5">
@@ -104,7 +104,7 @@ export default function Portfolio() {
                         <span className="sr-only">(abre em nova aba)</span>
                       </a>
                     ) : (
-                      <span className="text-white/40">{p.note || 'Demonstração ilustrativa'}</span>
+                      <span className="text-white/55">{p.note || 'Demonstração ilustrativa'}</span>
                     )}
                   </div>
                 </div>

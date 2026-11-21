@@ -71,7 +71,7 @@ export default function Footer({ base = '' }) {
         </div>
       </Container>
       <div className="border-t border-white/[0.05]">
-        <Container className="flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/35 sm:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/55 sm:flex-row">
           <p suppressHydrationWarning>© {new Date().getFullYear()} AJU Digital. Todos os direitos reservados.</p>
           <p>Tecnologia · Automação · Criatividade</p>
         </Container>
