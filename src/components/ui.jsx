@@ -9,12 +9,13 @@ export function Reveal({ as: Tag = 'div', delay = 0, className = '', children, .
     if (!el) return
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        // visível, ou já acima da tela (rolagem rápida / link de âncora): mostra na hora
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
           setVisible(true)
           io.disconnect()
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0, rootMargin: '0px 0px 10% 0px' },
     )
     io.observe(el)
     return () => io.disconnect()

@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Iluminação cinematográfica */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_72%_48%,rgba(255,106,0,.22),transparent_70%)]" />
-        <div className="absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-orange/10 blur-[140px]" />
+        <div className="heavy-blur absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-orange/10 blur-[140px]" />
         <div className="light-columns absolute inset-0 animate-beam" />
         <div className="grid-lines absolute inset-0" />
         {/* horizonte orbital */}

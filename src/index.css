@@ -126,8 +126,8 @@
   }
 
   /* Só esconde para animar quando o JavaScript está ativo: sem JS, o conteúdo aparece normalmente. */
-  .js .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1), filter .9s; }
-  .js .reveal.is-visible { opacity: 1; transform: none; filter: none; }
+  .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal.is-visible { opacity: 1; transform: none; }
 
   .field {
     @apply w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-white/30 transition;
@@ -147,5 +147,25 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-  .js .reveal { opacity: 1; transform: none; filter: none; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/*
+ * Celulares e tablets: o Safari do iPhone tem pouca memória para efeitos de composição
+ * (desfoque, vidro fosco, mistura de camadas). Quando passa do limite, ele deixa áreas
+ * da página em branco. Aqui os efeitos pesados viram versões leves com o mesmo visual.
+ */
+/* brilho leve só aparece no celular (no computador fica o desfocado) */
+.glow-lite { display: none; }
+
+@media (max-width: 1023px), (hover: none) {
+  .grain::after { display: none; }
+  .light-columns { filter: none; animation: none; opacity: .5; }
+  .glass {
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+    background: linear-gradient(160deg, #1a1a1a, #121212 45%, #151515);
+  }
+  .text-gradient-anim { animation: none; }
+  .heavy-blur { display: none; }
+  .glow-lite { display: block; }
 }

@@ -13,17 +13,23 @@ export default function ParticleField({ density = 1, className = '' }) {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     let w = 0, h = 0, dpr = 1, raf = 0, running = true
     let particles = []
+    // celular/tablet: menos partículas, sem brilho e resolução 1x (economiza GPU no iPhone)
+    const lite = window.matchMedia('(hover: none), (max-width: 1023px)').matches
+    let lastW = 0
     const mouse = { x: -9999, y: -9999 }
 
     const resize = () => {
       const r = canvas.getBoundingClientRect()
-      dpr = Math.min(window.devicePixelRatio || 1, 2)
+      // no iPhone a barra do navegador some/aparece ao rolar e dispara 'resize': só refaz se a largura mudar
+      if (lastW && Math.abs(r.width - lastW) < 1) return
+      lastW = r.width
+      dpr = lite ? 1 : Math.min(window.devicePixelRatio || 1, 2)
       w = r.width
       h = r.height
       canvas.width = w * dpr
       canvas.height = h * dpr
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const count = Math.round(Math.min(110, (w * h) / 14000) * density)
+      const count = Math.round(Math.min(110, (w * h) / 14000) * density * (lite ? 0.45 : 1))
       particles = Array.from({ length: count }, () => spawn(true))
     }
     const spawn = (anywhere) => ({
@@ -53,7 +59,7 @@ export default function ParticleField({ density = 1, className = '' }) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx.fillStyle = p.hot ? `rgba(255,140,50,${alpha})` : `rgba(255,255,255,${alpha * 0.7})`
-        ctx.shadowBlur = p.hot ? 8 : 0
+        ctx.shadowBlur = p.hot && !lite ? 8 : 0
         ctx.shadowColor = 'rgba(255,106,0,.9)'
         ctx.fill()
       }

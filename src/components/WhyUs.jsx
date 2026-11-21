@@ -14,7 +14,7 @@ const ITEMS = [
 export default function WhyUs() {
   return (
     <section id="sobre" aria-labelledby="sobre-title" className="relative overflow-hidden py-24 sm:py-32">
-      <div aria-hidden className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-orange/10 blur-[150px]" />
+      <div aria-hidden className="heavy-blur absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-orange/10 blur-[150px]" />
       <Container className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeading id="sobre-title" eyebrow="Por que a AJU Digital" title="Não entregamos apenas projetos. Criamos soluções." />

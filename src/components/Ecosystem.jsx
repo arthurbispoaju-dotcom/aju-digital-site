@@ -54,7 +54,9 @@ export default function Ecosystem() {
       aria-label="Ilustração: sites, software, automações com IA e apresentações conectados por linhas de luz a um núcleo central da AJU Digital"
     >
       {/* brilho de fundo */}
-      <div aria-hidden className="absolute left-1/2 top-[52%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange/25 blur-[90px] animate-pulse-glow" />
+      <div aria-hidden className="heavy-blur absolute left-1/2 top-[52%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange/25 blur-[90px] animate-pulse-glow" />
+      {/* versão leve do brilho para celular (gradiente, sem filtro) */}
+      <div aria-hidden className="absolute left-1/2 top-[52%] h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,.28),transparent_62%)] glow-lite" />
 
       <div
         ref={sceneRef}
