@@ -1,7 +1,7 @@
 import { PROJECTS } from '../data/projects'
 import { whatsappLink } from '../config'
 import { Container, Reveal, SectionHeading, SpotlightCard } from './ui'
-import { Dashboard, DemoFlow, DemoKPI, DemoLanding, Laptop } from './Mockups'
+import { Dashboard, DemoFlow, DemoKPI, DemoLanding, Laptop, SlideFrame } from './Mockups'
 import { IconArrow, IconArrowUpRight, IconCheck, IconWhatsApp } from './icons'
 import ParticleField from './ParticleField'
 import Contact from './Contact'
@@ -9,6 +9,14 @@ import Contact from './Contact'
 function HeroVisual({ type }) {
   if (type === 'dashboard') return <Dashboard title="Painel de indicadores"><DemoKPI /></Dashboard>
   if (type === 'automacao') return <Dashboard title="Fluxo automatizado"><DemoFlow /></Dashboard>
+  if (type === 'software') {
+    const img = PROJECTS.find((p) => p.id === 'despacho')?.image
+    return <Laptop url="sistema.suaempresa.com.br"><img src={img} alt="Tela do sistema Despacho, desenvolvido pela AJU Digital" width="960" height="540" className="h-full w-full object-cover object-top" /></Laptop>
+  }
+  if (type === 'slides') {
+    const img = PROJECTS.find((p) => p.id === 'pesv')?.image
+    return <SlideFrame><img src={img} alt="Apresentação interativa PESV, criada pela AJU Digital" width="960" height="540" className="h-full w-full object-cover object-top" /></SlideFrame>
+  }
   return <Laptop url="ajudigital.com.br"><DemoLanding /></Laptop>
 }
 

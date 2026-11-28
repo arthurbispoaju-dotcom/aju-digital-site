@@ -8,8 +8,8 @@ const SERVICE_LINKS = [
   { label: 'Criação de sites', href: '/criacao-de-sites-aracaju/' },
   { label: 'Dashboards', href: '/dashboards-para-empresas/' },
   { label: 'Automação de processos', href: '/automacao-de-processos/' },
-  { label: 'Desenvolvimento de software', filter: 'software' },
-  { label: 'Apresentações profissionais', filter: 'apresentacoes' },
+  { label: 'Desenvolvimento de software', href: '/desenvolvimento-de-software-aracaju/' },
+  { label: 'Apresentações profissionais', href: '/apresentacoes-profissionais/' },
 ]
 
 export default function Footer({ base = '' }) {

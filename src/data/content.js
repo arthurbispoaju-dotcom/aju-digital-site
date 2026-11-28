@@ -32,8 +32,8 @@ export const SOLUTIONS = [
     ],
     cta: 'Veja um sistema em ação',
     filter: 'software',
-    page: '/dashboards-para-empresas/',
-    pageLabel: 'Dashboards para empresas',
+    page: '/desenvolvimento-de-software-aracaju/',
+    pageLabel: 'Desenvolvimento de software em Aracaju',
   },
   {
     id: 'automacoes',
@@ -72,6 +72,8 @@ export const SOLUTIONS = [
     ],
     cta: 'Veja nossas possibilidades',
     filter: 'apresentacoes',
+    page: '/apresentacoes-profissionais/',
+    pageLabel: 'Apresentações profissionais',
   },
 ]
 

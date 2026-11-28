@@ -1,4 +1,4 @@
-import { IconAutomation, IconBrowser, IconSlides } from '../components/icons'
+import { IconAutomation, IconBrowser, IconCode, IconSlides } from '../components/icons'
 
 /**
  * PÁGINAS DE SERVIÇO
@@ -11,7 +11,7 @@ import { IconAutomation, IconBrowser, IconSlides } from '../components/icons'
  *  metaDesc    : descrição que aparece no Google (até ~155 caracteres)
  *  formService : opção já marcada no formulário de contato desta página
  *  projects    : ids de src/data/projects.js exibidos como exemplos
- *  visual      : ilustração do topo: 'site' | 'dashboard' | 'automacao'
+ *  visual      : ilustração do topo: 'site' | 'dashboard' | 'automacao' | 'software' | 'slides'
  */
 export const SERVICES = [
   {
@@ -69,7 +69,7 @@ export const SERVICES = [
     label: 'Dashboards',
     Icon: IconSlides,
     visual: 'dashboard',
-    metaTitle: 'Dashboards e Painéis de Indicadores · AJU Digital',
+    metaTitle: 'Dashboards para Empresas em Aracaju · AJU Digital',
     metaDesc:
       'Dashboards sob medida que reúnem vendas, financeiro e operação em uma tela, com dados atualizados de planilhas, sistemas e CRMs. Atendimento em Aracaju e no Brasil.',
     eyebrow: 'Dashboards e indicadores',
@@ -118,7 +118,7 @@ export const SERVICES = [
     label: 'Automação',
     Icon: IconAutomation,
     visual: 'automacao',
-    metaTitle: 'Automação de Processos com N8N, Make e IA · AJU Digital',
+    metaTitle: 'Automação de Processos e WhatsApp em Aracaju · AJU Digital',
     metaDesc:
       'Automação de processos e atendimento: integramos WhatsApp, planilhas, CRM e e-mail com N8N, Make e inteligência artificial para eliminar tarefas manuais.',
     eyebrow: 'Automação de processos e IA',
@@ -160,6 +160,104 @@ export const SERVICES = [
       ['O atendimento automático substitui a equipe?', 'Não. Ele responde o que é repetitivo e organiza as informações, para que sua equipe atenda melhor quem realmente precisa de uma pessoa.'],
       ['E se a automação parar de funcionar?', 'Configuramos alertas de falha e entregamos os fluxos documentados. Também oferecemos acompanhamento e manutenção.'],
       ['Quanto custa automatizar um processo?', 'Depende de quantos sistemas estão envolvidos e da complexidade do fluxo. Depois do diagnóstico enviamos um orçamento fechado.'],
+    ],
+  },
+  {
+    path: '/desenvolvimento-de-software-aracaju/',
+    label: 'Desenvolvimento de software',
+    Icon: IconCode,
+    visual: 'software',
+    metaTitle: 'Desenvolvimento de Software em Aracaju · AJU Digital',
+    metaDesc:
+      'Desenvolvimento de software e sistemas web sob medida em Aracaju: gestão de processos, painéis, ferramentas internas e integrações com APIs e CRMs.',
+    eyebrow: 'Desenvolvimento de software · Aracaju (SE)',
+    h1: ['Sistemas sob medida ', 'para o seu negócio.'],
+    lead:
+      'Desenvolvemos sistemas web feitos para a forma como a sua empresa trabalha: processos organizados, informação em um só lugar e a equipe acompanhando tudo do computador ou do celular.',
+    formService: 'Desenvolvimento de software',
+    whatsapp: 'Olá, AJU Digital! Vim pela página de desenvolvimento de software e quero conversar sobre um sistema.',
+    pains: {
+      title: 'Quando a planilha não dá mais conta.',
+      items: [
+        ['Informação espalhada', 'Dados em planilhas, e-mails, cadernos e conversas de WhatsApp, e ninguém sabe qual versão está certa.'],
+        ['Prazos perdidos', 'Sem um lugar central, demandas atrasam porque ninguém viu o vencimento a tempo.'],
+        ['Sistemas prontos que não encaixam', 'Ferramentas genéricas obrigam a empresa a mudar o processo, ou cobram por recursos que você não usa.'],
+      ],
+    },
+    deliverables: {
+      title: 'O que podemos desenvolver',
+      items: [
+        ['Sistemas de gestão', 'Cadastros, pedidos, demandas, protocolos e status organizados em um só sistema.'],
+        ['Painéis e kanban', 'Visão do que está pendente, em andamento e concluído, com prazos em destaque.'],
+        ['Ferramentas internas', 'Aplicações sob medida para tarefas específicas da sua equipe.'],
+        ['Integrações', 'Conexão com APIs, CRMs (inclusive Salesforce), planilhas e outros sistemas que você já usa.'],
+        ['Acesso de qualquer lugar', 'Sistema web que funciona no navegador do computador e do celular, sem instalar nada.'],
+        ['Manutenção e evolução', 'Ajustes, novas funcionalidades e suporte depois da entrega.'],
+      ],
+    },
+    types: ['Gestão de demandas e protocolos', 'Controle de pedidos e clientes', 'Painéis administrativos', 'Ferramentas internas', 'Integrações entre sistemas'],
+    steps: [
+      ['Diagnóstico', 'Entendemos o processo atual, quem usa o sistema e o que precisa mudar.'],
+      ['Desenho das telas', 'Definimos as telas e o caminho de cada usuário antes de programar.'],
+      ['Desenvolvimento por etapas', 'Você acompanha e testa partes do sistema enquanto ele é construído.'],
+      ['Entrega e treinamento', 'Publicamos o sistema, orientamos a equipe e seguimos com o suporte.'],
+    ],
+    projects: ['despacho', 'conceito-painel'],
+    faq: [
+      ['Quanto custa um sistema sob medida?', 'Depende das telas, dos tipos de usuário e das integrações. Depois do diagnóstico enviamos um orçamento fechado, sem compromisso.'],
+      ['Qual a diferença para um sistema pronto?', 'O sistema sob medida segue o seu processo, em vez de você se adaptar a ele. Você paga pelo que usa e pode evoluir o sistema quando o negócio crescer.'],
+      ['O sistema funciona no celular?', 'Sim. Desenvolvemos sistemas web que funcionam no navegador do computador, do tablet e do celular.'],
+      ['Consigo integrar com o que já uso?', 'Na maioria dos casos, sim. Integramos com planilhas, CRMs como o Salesforce, e-mail e outros sistemas que ofereçam API.'],
+      ['Atendem fora de Aracaju?', 'Sim. A AJU Digital fica em Aracaju (SE) e desenvolve sistemas para empresas de todo o Brasil, com reuniões online.'],
+    ],
+  },
+  {
+    path: '/apresentacoes-profissionais/',
+    label: 'Apresentações profissionais',
+    Icon: IconSlides,
+    visual: 'slides',
+    metaTitle: 'Apresentações Profissionais e Pitch Decks · AJU Digital',
+    metaDesc:
+      'Criação de apresentações corporativas, comerciais, institucionais e pitch decks em Aracaju, com design profissional e conteúdo organizado para convencer.',
+    eyebrow: 'Apresentações profissionais',
+    h1: ['Apresente suas ideias ', 'com impacto.'],
+    lead:
+      'Transformamos informações soltas em apresentações organizadas e visualmente sofisticadas, que passam credibilidade em reuniões, propostas, treinamentos e eventos.',
+    formService: 'Apresentações profissionais',
+    whatsapp: 'Olá, AJU Digital! Vim pela página de apresentações e quero um orçamento.',
+    pains: {
+      title: 'Um bom serviço merece uma boa apresentação.',
+      items: [
+        ['Slides com cara de amador', 'Fontes misturadas, texto demais e cores sem padrão fazem um ótimo serviço parecer comum.'],
+        ['Mensagem que não fica clara', 'Informação demais por slide e nenhum fio condutor: o cliente termina sem saber o que decidir.'],
+        ['Tempo perdido montando slides', 'Horas ajustando caixas de texto que poderiam ir para vender e atender.'],
+      ],
+    },
+    deliverables: {
+      title: 'O que está incluso',
+      items: [
+        ['Roteiro e organização', 'Estruturamos o conteúdo para contar uma história clara do início à decisão.'],
+        ['Design com a sua marca', 'Cores, fontes e elementos visuais alinhados à identidade da empresa.'],
+        ['Gráficos e diagramas', 'Números e processos transformados em visuais fáceis de entender.'],
+        ['Formatos que você usa', 'PowerPoint, Google Slides, PDF ou apresentação interativa no navegador.'],
+        ['Modelo editável', 'Arquivo organizado para você atualizar e reaproveitar em novas reuniões.'],
+        ['Redesign de slides', 'Reorganizamos e modernizamos apresentações que você já tem.'],
+      ],
+    },
+    types: ['Apresentações corporativas', 'Apresentações comerciais e propostas', 'Apresentações institucionais', 'Pitch decks', 'Treinamentos e integração'],
+    steps: [
+      ['Briefing', 'Entendemos o objetivo, o público e o que a apresentação precisa provocar.'],
+      ['Roteiro', 'Organizamos o conteúdo em uma sequência clara antes do design.'],
+      ['Design', 'Criamos os slides com a sua identidade visual, gráficos e imagens.'],
+      ['Ajustes e entrega', 'Revisamos com você e entregamos nos formatos combinados.'],
+    ],
+    projects: ['pesv', 'nr11'],
+    faq: [
+      ['Quanto custa uma apresentação?', 'Depende do número de slides, do conteúdo pronto e dos gráficos necessários. Enviamos um orçamento fechado depois de entender o projeto.'],
+      ['Vocês escrevem o conteúdo?', 'Organizamos e lapidamos o conteúdo que você tem. Quando falta texto, ajudamos a redigir a partir das suas informações.'],
+      ['Em qual formato recebo?', 'PowerPoint, Google Slides, PDF ou uma apresentação interativa que abre no navegador, conforme você preferir.'],
+      ['Dá para refazer uma apresentação que já tenho?', 'Sim. Fazemos o redesign completo ou apenas a organização e padronização dos slides existentes.'],
+      ['Atendem fora de Aracaju?', 'Sim. Atendemos empresas de todo o Brasil e também já fizemos apresentações em espanhol para clientes no exterior.'],
     ],
   },
 ]
